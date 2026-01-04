@@ -44,7 +44,7 @@ exports.handler = async (event) => {
       console.log('Aggregate calculated:', JSON.stringify(aggregate, null, 2));
       
       // 3. Save aggregate to processed bucket
-      const processedKey = key.replace('raw/', 'aggregates/').replace(/\.[^/.]+$/, '.json');
+      const processedKey = key.replace('uploads/', 'aggregates/').replace(/\.[^/.]+$/, '.json');
       const putCommand = new PutObjectCommand({
         Bucket: process.env.PROCESSED_BUCKET,
         Key: processedKey,
