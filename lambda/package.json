@@ -1,0 +1,19 @@
+{
+  "name": "file-processor",
+  "version": "1.0.0",
+  "description": "Process uploaded files and create aggregates",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "package": "npm run clean && npm run build && cd dist && zip -r ../function.zip . && cd .."
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.699.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^20.10.6",
+    "typescript": "^5.3.3"
+  }
+}
