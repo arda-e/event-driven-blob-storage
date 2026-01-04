@@ -3,8 +3,8 @@ const { S3Client, GetObjectCommand, PutObjectCommand, PutObjectTaggingCommand } 
 const s3Client = new S3Client();
 
 exports.handler = async (event) => {
+  console.log('Deployed via GitHub Actions');
   console.log('Received event:', JSON.stringify(event, null, 2));
-  
   // Process each SQS message
   for (const record of event.Records) {
     try {
